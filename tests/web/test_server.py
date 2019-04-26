@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from web.server import Server
+from titanic_predictor.web.server import Server
 
 
 class TestServer(TestCase):
