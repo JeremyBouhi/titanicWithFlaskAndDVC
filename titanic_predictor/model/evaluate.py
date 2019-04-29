@@ -1,9 +1,7 @@
 import pickle
 from sklearn.metrics import accuracy_score
 
-import sys
-sys.path.insert(0, '..')
-from model import conf
+import conf
 
 with open(conf.model, 'rb') as fd:
     model = pickle.load(fd)

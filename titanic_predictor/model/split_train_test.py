@@ -1,8 +1,5 @@
 from sklearn.model_selection import train_test_split
 import pickle
-
-#sys.path.append(os.path.dirname('titanic_predictor'))
-#print(sys.path)
 import conf
 
 with open(conf.df_train, 'rb') as fd:

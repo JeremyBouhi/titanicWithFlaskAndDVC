@@ -2,13 +2,10 @@ import pickle
 import pandas as pd
 import numpy as np
 
-import sys
-sys.path.insert(0, '..')
-from model import conf
-
+import conf
 
 def grab_data():
-    df = pd.read_csv("../../data/train.csv")
+    df = pd.read_csv("data/train.csv")
     return df
 
 def _clean_age(df):

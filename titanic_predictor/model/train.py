@@ -1,9 +1,7 @@
 from sklearn.ensemble import RandomForestRegressor
 import pickle
 
-import sys
-sys.path.insert(0, '..')
-from model import conf
+import conf
 
 output = conf.model
 
