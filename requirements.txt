@@ -1,2 +1,5 @@
 Flask
 pytest
+pandas
+numpy
+sklearn

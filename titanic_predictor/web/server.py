@@ -1,4 +1,8 @@
-from flask import Flask
+from flask import Flask, jsonify
+
+
+def compute_prediction():
+    return [0.16019]
 
 
 class Server:
@@ -13,4 +17,13 @@ class Server:
         def hello():
             return "Hello World"
 
+        @app.route("/predict", methods=['POST'])
+        def predict():
+            y_preds = compute_prediction()
+            return jsonify({
+                "predictions": y_preds[0]
+            })
+
         return app
+
+
