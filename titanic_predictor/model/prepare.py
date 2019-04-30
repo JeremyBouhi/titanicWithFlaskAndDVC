@@ -2,7 +2,8 @@ import pickle
 import pandas as pd
 import numpy as np
 
-import conf
+try: from titanic_predictor import conf
+except: import conf
 
 def grab_data():
     df = pd.read_csv("data/train.csv")

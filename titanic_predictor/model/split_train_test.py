@@ -1,6 +1,8 @@
 from sklearn.model_selection import train_test_split
 import pickle
-import conf
+try: from titanic_predictor import conf
+except: import conf
+
 
 with open(conf.df_train, 'rb') as fd:
     df = pickle.load(fd)

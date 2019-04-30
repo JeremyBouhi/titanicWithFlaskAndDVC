@@ -1,7 +1,7 @@
 import pickle
 from sklearn.metrics import accuracy_score
-
-import conf
+try: from titanic_predictor import conf
+except: import conf
 
 with open(conf.model, 'rb') as fd:
     model = pickle.load(fd)

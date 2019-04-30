@@ -1,7 +1,8 @@
 from sklearn.ensemble import RandomForestRegressor
 import pickle
 
-import conf
+try: from titanic_predictor import conf
+except: import conf
 
 output = conf.model
 
