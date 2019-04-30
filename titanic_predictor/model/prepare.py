@@ -2,12 +2,15 @@ import pickle
 import pandas as pd
 import numpy as np
 
-try: from titanic_predictor import conf
-except: import conf
+try:
+    from . import conf
+except:
+    from titanic_predictor import conf
 
 def grab_data():
     df = pd.read_csv("data/train.csv")
     return df
+
 
 def _clean_age(df):
     df['Age'].fillna(df['Age'].median(), inplace=True)
@@ -15,6 +18,7 @@ def _clean_age(df):
     labels = ['Child', 'Teenager', 'Young Adult', 'Adult', 'Senior']
     df['AgeGroup'] = pd.cut(df["Age"], bins, labels=labels)
     return df
+
 
 def _clean_family_size(df):
     df['FamilySize'] = df['SibSp'] + df['Parch'] + 1
