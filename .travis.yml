@@ -4,8 +4,8 @@ python:
 install:
     - pip install -r requirements.txt
 script:
-    - python titanic_predictor/model/prepare.py
-    - python titanic_predictor/model/split_train_test.py
-    - python titanic_predictor/model/train.py
-    - python titanic_predictor/model/evaluate.py
-    - pytest
+    #- dvc init
+    #- dvc remote add -d s3Remote s3://mybucket/myproject
+    #- dvc pull
+    #- dvc repro $(dvc root)/dvc_files/Dvcfile
+    #- pytest

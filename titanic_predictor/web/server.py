@@ -25,5 +25,3 @@ class Server:
             })
 
         return app
-
-

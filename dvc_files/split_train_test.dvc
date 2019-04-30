@@ -1,10 +1,10 @@
 cmd: python titanic_predictor/model/split_train_test.py
 deps:
-- md5: a6e476b3ffdae99d1a1ea0e67ca46d96
+- md5: fd2fcf9499b91d7681c45af58a72045e
   path: titanic_predictor/model/split_train_test.py
 - md5: 1a1dca39c7ad634bd1e5514c1767dd2e
   path: outputs/preprocessed_df.p
-md5: c4b4ec65dc2926cc4c1e008197989eec
+md5: 8a37d2c18461de945e7f82f45b154e22
 outs:
 - cache: true
   md5: 780c065d125a8700f84c9420e75c31d7
