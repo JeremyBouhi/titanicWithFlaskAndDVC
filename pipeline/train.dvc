@@ -1,6 +1,6 @@
 cmd: python titanic_predictor/model/train.py
 deps:
-- md5: 18ede57ec39891497e59545eeb13b15c
+- md5: a7fe2e83b783e02c4fd343511f033406
   path: titanic_predictor/model/train.py
 - md5: d6bf92ed706ba9b8baebee9ebcb714d1
   path: outputs/X_test.p
@@ -10,10 +10,10 @@ deps:
   path: outputs/y_test.p
 - md5: ad40268f7388e3e89c1b6ae8418242bb
   path: outputs/y_train.p
-md5: bb9c907c5114acb17091376afcbe4a20
+md5: 6773199db19e9407da48fe49aadc2a76
 outs:
 - cache: true
-  md5: 3dc8e09ddb64a9c1ee66eb9849014087
+  md5: b7d8ec6f738c43b876b117890603df67
   metric: false
   path: outputs/model.p
   persist: false
