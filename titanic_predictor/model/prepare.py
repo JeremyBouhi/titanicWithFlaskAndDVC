@@ -5,7 +5,7 @@ import numpy as np
 try:
     import conf
 except:
-    from titanic_predictor import conf
+    from . import conf
 
 def grab_data():
     df = pd.read_csv("data/train.csv")
