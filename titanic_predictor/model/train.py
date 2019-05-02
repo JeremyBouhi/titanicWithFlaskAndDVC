@@ -14,7 +14,6 @@ with open(conf.y_train, 'rb') as fd:
 
 reg = RandomForestRegressor()
 reg.fit(X_train, y_train)
-
 print(reg)
 
 with open(output, 'wb') as fd:

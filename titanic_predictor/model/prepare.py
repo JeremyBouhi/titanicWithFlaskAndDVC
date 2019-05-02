@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 try:
-    from . import conf
+    import conf
 except:
     from titanic_predictor import conf
 
