@@ -1,4 +1,5 @@
 import pickle
+from datetime import datetime
 from sklearn.metrics import accuracy_score
 try: from titanic_predictor import conf
 except: import conf
@@ -27,4 +28,4 @@ print(auc)
 #%%
 
 with open(conf.metrics, 'w') as fd:
-    fd.write('AUC: {:4f}\n'.format(auc))
+    fd.write('AUC: {:4f}\n'.format(auc)+'%s'%datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
