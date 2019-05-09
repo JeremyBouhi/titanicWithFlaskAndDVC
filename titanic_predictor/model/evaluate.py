@@ -1,8 +1,9 @@
 import pickle
 from datetime import datetime
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, mean_squared_error, f1_score
 try: from titanic_predictor import conf
 except: import conf
+import csv
 
 with open(conf.model, 'rb') as fd:
     model = pickle.load(fd)
@@ -13,19 +14,22 @@ with open(conf.X_test, 'rb') as fd:
 with open(conf.y_test, 'rb') as fd:
     y_test = pickle.load(fd)
 
-#%%
-y_test.shape
-#%%
-#auc = model.score(X_test, y_test)
 y_preds = model.predict(X_test)
-#%%
-print(y_preds.round())
-#%%
-auc = round(accuracy_score(y_preds.round(),y_test)*100,2)
-#%%
-print(auc)
 
+datetime = str(datetime.now().strftime("%d-%m-%Y %H:%M:%S"))
+
+auc = round(accuracy_score(y_test, y_preds.round()), 4)
+mse = round(mean_squared_error(y_test, y_preds), 4)
+f1 = round(f1_score(y_test, y_preds.round()), 4)
 #%%
+print(datetime)
+print(auc, mse, f1)
+
+metrics_type = ["AUC", "MSE", "F1"]
+metrics_data = [auc, mse, f1]
+#data = [[datetime], metrics_type, metrics_data]
+data = [metrics_type, metrics_data]
 
 with open(conf.metrics, 'w') as fd:
-    fd.write('AUC: {:4f}\n'.format(auc)+'%s'%datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    writer = csv.writer(fd)
+    writer.writerows(data)
