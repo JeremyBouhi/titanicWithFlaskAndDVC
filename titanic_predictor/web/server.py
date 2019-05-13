@@ -3,22 +3,14 @@ from titanic_predictor.model.conf import model
 from titanic_predictor.model.prepare import preprocess_data
 import pickle
 import pandas as pd
+import csv
 
 
-def compute_prediction():
+def compute_prediction(df):
     with open(model, 'rb') as fd:
         model_matrix = pickle.load(fd)
 
-    data_sent = request.json
-    print("data_sent: ", data_sent)
-
-    columns = data_sent.keys()
-    df_sent = pd.DataFrame(data_sent, columns=columns, index=[1])
-    print("df_sent: ", df_sent)
-
-    X_sent = preprocess_data(df_sent)
-    print("X_sent: ", X_sent)
-
+    X_sent = preprocess_data(df)
     y_preds = model_matrix.predict(X_sent)
     return y_preds
 
@@ -37,10 +29,29 @@ class Server:
 
         @app.route("/predict", methods=['POST'])
         def predict():
-            y_preds = compute_prediction()
+            data_sent = request.json
+            columns = data_sent.keys()
+            df_sent = pd.DataFrame(data_sent, columns=columns, index=[1])
+            print("df_sent: ", df_sent)
+
+            y_preds = compute_prediction(df_sent)
             print(y_preds)
             return jsonify({
                 "predictions": y_preds[0]
             })
+
+        @app.route("/submit", methods=['GET'])
+        def submit():
+            df_test = pd.read_csv("data/test.csv")
+            df_passengers = df_test['PassengerId']
+            y_preds = compute_prediction(df_test)
+
+            d = {'PassengerId': df_passengers, 'Survived': y_preds.round()}
+            df_submit = pd.DataFrame(data=d)
+
+            print(df_submit)
+            df_submit.to_csv('outputs/submission.csv', index=False)
+
+            return 'Ok'
 
         return app
