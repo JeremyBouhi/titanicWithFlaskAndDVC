@@ -2,18 +2,18 @@ cmd: python titanic_predictor/model/train.py
 deps:
 - md5: a7fe2e83b783e02c4fd343511f033406
   path: titanic_predictor/model/train.py
-- md5: 66623a1979286bbbf32e19cf99ec624c
+- md5: 780c065d125a8700f84c9420e75c31d7
   path: outputs/X_test.p
-- md5: f477ff33e6c695b4a6ca0afc8257c428
+- md5: 00c115aa066a46dd4fea44dae0bef19a
   path: outputs/X_train.p
-- md5: d6028c84cc0b90101bcea6dfbe5ab040
+- md5: 69e8e92bd15a5a35a60ba611a9ea53dc
   path: outputs/y_test.p
-- md5: c30863f8663596472c55a703578b07a9
+- md5: ede81a58891c6586ba3d34c67e88d6ad
   path: outputs/y_train.p
-md5: 30affa5289d92836a43fa9a52b7141cc
+md5: c897c3fee01e4611be9ece45bb7e9429
 outs:
 - cache: true
-  md5: 58102b545ade572bacc018fbffe15a9f
+  md5: 63e470e91d3613280d008c841df16fca
   metric: false
   path: outputs/model.p
   persist: false

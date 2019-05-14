@@ -2,12 +2,12 @@ cmd: python titanic_predictor/model/evaluate.py
 deps:
 - md5: 584a52d358ef62f52c9c8ca24ed2fed1
   path: titanic_predictor/model/evaluate.py
-- md5: 58102b545ade572bacc018fbffe15a9f
+- md5: 63e470e91d3613280d008c841df16fca
   path: outputs/model.p
-md5: dfaf0a026116d910eac7ba0cf8bffcbc
+md5: 179693fd95e8fba22ce784f48ce00b67
 outs:
 - cache: true
-  md5: 51a33806be3bb783e6791618ea30631d
+  md5: 7467202c959a4ecd365e2b46aab7af22
   metric: true
   path: outputs/eval.csv
   persist: false
