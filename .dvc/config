@@ -1,4 +1,0 @@
-['remote "mySuperRemote"']
-url = /tmp/titanic-storage
-[core]
-remote = mySuperRemote

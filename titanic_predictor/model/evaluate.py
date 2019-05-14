@@ -23,13 +23,10 @@ mse = round(mean_squared_error(y_test, y_preds), 4)
 f1 = round(f1_score(y_test, y_preds.round()), 4)
 #%%
 print(datetime)
-print(auc, mse, f1)
 
 metrics_type = ["AUC", "MSE", "F1"]
 metrics_data = [auc, mse, f1]
 #data = [[datetime], metrics_type, metrics_data]
 data = [metrics_type, metrics_data]
 
-with open(conf.metrics, 'w') as fd:
-    writer = csv.writer(fd)
-    writer.writerows(data)
+print(data)
