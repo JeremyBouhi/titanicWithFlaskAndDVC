@@ -7,5 +7,5 @@ script:
     #- dvc init
     #- dvc remote add -d s3Remote s3://mybucket/myproject
     #- dvc pull
-    #- dvc repro $(dvc root)/dvc_files/Dvcfile
+    #- dvc repro pipeline/Dvcfile
     - pytest
