@@ -1,7 +1,7 @@
 # Testing the data sharing
 
 First you need to download data from Kaggle : https://www.kaggle.com/c/titanic
-or you can also just have a data folder which contains files
+or you can also just create your own data folder which contains your data files
 
 ### Installation
     pip install dvc
