@@ -1,5 +1,5 @@
 import pickle
-from sklearn.linear_model import BayesianRidge
+from sklearn.ensemble import RandomForestRegressor
 
 try: from titanic_predictor import conf
 except: import conf
@@ -12,7 +12,7 @@ with open(conf.X_train, 'rb') as fd:
 with open(conf.y_train, 'rb') as fd:
     y_train = pickle.load(fd)
 
-reg = BayesianRidge()
+reg = RandomForestRegressor()
 reg.fit(X_train, y_train)
 print(reg)
 
