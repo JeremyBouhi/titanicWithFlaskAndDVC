@@ -3,8 +3,6 @@ from titanic_predictor.model.conf import model
 from titanic_predictor.model.prepare import preprocess_data
 import pickle
 import pandas as pd
-import csv
-
 
 def compute_prediction(df):
     with open(model, 'rb') as fd:
