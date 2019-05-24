@@ -7,7 +7,7 @@ or you can also just create your own data folder which contains your data files
     pip install dvc
 ### Initialisation    
     dvc init
-    dvc remote add localStorage /tmp/titanic-storage (you can add -d option for setting a default remote)
+    dvc remote add -d localStorage /tmp/titanic-storage
 ### Share Data
      dvc add data
      dvc push
