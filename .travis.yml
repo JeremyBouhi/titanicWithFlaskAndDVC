@@ -3,11 +3,10 @@ python:
     - "3.6"
 install:
     - pip install -r requirements.txt
-script:
-    #- dvc init
-    #- dvc remote add -d s3Remote s3://mybucket/myproject
-    #- dvc pull
-    #- dvc repro pipeline/Dvcfile
-    - echo $AWS_ACCES_KEY
-    - echo $AWS_SECRET_KEY
-    - pytest
+    - dvc pull
+jobs:
+    include:
+          - stage: Run unit test
+            script: pytest
+          - stage: Repro
+            script: dvc repro pipeline/Dvcfile
