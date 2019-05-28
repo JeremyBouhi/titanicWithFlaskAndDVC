@@ -1,4 +1,6 @@
 ['remote "local-remote"']
 url = /Users/jeremy.bouhi/Documents/dvc/titanic-storage
 [core]
-remote = local-remote
+remote = S3remote
+['remote "S3remote"']
+url = s3://octo-bda-stage-jebo/titanic

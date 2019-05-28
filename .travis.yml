@@ -8,4 +8,6 @@ script:
     #- dvc remote add -d s3Remote s3://mybucket/myproject
     #- dvc pull
     #- dvc repro pipeline/Dvcfile
+    - echo $AWS_ACCES_KEY
+    - echo $AWS_SECRET_KEY
     - pytest

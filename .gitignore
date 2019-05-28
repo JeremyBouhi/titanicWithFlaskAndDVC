@@ -1,4 +1,4 @@
-venv
+titanic_venv/
 .pytest_cache
 .idea
 __pycache__
