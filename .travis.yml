@@ -6,7 +6,7 @@ install:
     - dvc pull
 jobs:
     include:
-          - stage: Run unit test
-            script: pytest
+          #- stage: Run unit test
+            #script: pytest
           - stage: Repro
             script: dvc repro pipeline/Dvcfile
